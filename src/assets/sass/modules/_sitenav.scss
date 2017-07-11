@@ -1,0 +1,41 @@
+.sitenav {
+	position: fixed;
+	z-index: 10;
+	right: $space * 2;
+	top: 50%;
+	transform: translateY(-50%) translateX(50%) rotate(90deg);
+}
+
+.sitenav-items {
+	
+}
+
+.sitenav-list {
+	padding: 0 ($space / 2);
+}
+
+.sitenav-anchor {
+	position: relative;
+	color: currentcolor;
+	cursor: pointer;
+
+	&:before {
+		position: absolute;
+		content: '';
+		bottom: -($space / 3);
+		left: 50%;
+		height: 2px;
+		background: $brand_blue;
+		width: 0;
+		transition: all 0.2s ease;
+		transform: translateX(-50%);
+	}
+	
+	&:hover, &:focus {
+		color: currentcolor;
+
+		&:before {
+			width: 90%;
+		}
+	}
+}

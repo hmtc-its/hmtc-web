@@ -1,0 +1,44 @@
+.site-logo {
+	position: relative;
+	z-index: 5;
+	margin-bottom: $space;
+	display: block;
+	height: 128px;
+	clear: both;
+}
+
+.hero {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	//padding: ($space * 3) 0
+}
+
+.hero-title {
+	z-index: 5;
+	position: relative;
+	width: 700px;
+	max-width: 100%;
+	font-size: ($base_font_size * 3.5);
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 24px;
+		right: calc(100% + 32px);
+		height: 3px;
+		width: 100%;
+		background: $brand_blue;
+	}
+}
+
+.hero-video {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	opacity: 0.25;
+	max-width: 800px;
+}

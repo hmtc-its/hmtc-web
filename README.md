@@ -1,6 +1,6 @@
 # hmtc-vue
 
-> HMTC-ITS Official Online Portal
+> HMTC-ITS Official Online Portal. Built with VueJS 2.0 and Webpack.
 
 ## Build Setup
 

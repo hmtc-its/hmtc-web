@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <nav class="sitenav">
+      <ul class="sitenav-items list-nostyle list-inline">
+        <li class="sitenav-list"><a class="sitenav-anchor">about</a></li>
+        <li class="sitenav-list"><a class="sitenav-anchor">articles</a></li>
+        <li class="sitenav-list"><a class="sitenav-anchor">media</a></li>
+        <li class="sitenav-list"><a class="sitenav-anchor">connect</a></li>
+      </ul>
+    </nav>
     <router-view></router-view>
+    
+    <router-link to="/">Home</router-link>
+    <router-link to="/articles">Articles</router-link>
+    <router-link to="/about">About</router-link>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app'
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import "./assets/sass/main.scss";
 </style>

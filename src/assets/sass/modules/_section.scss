@@ -1,0 +1,19 @@
+.home-section {
+	padding: ($space * 3) 0;
+	border-top: solid 1px $black30;
+	box-sizing: border-box;
+	min-height: 100vh;
+}
+
+.section-title {
+	position: relative;
+	margin-bottom: $space;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		height: 2px;
+		width: 64px;
+		background: $brand_blue;
+	}
+}
