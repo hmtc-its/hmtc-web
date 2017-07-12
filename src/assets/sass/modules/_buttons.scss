@@ -21,6 +21,7 @@ $BTN_PADDING: ($space / 3) $space;
 .btn {
     display: inline-block;
     padding: $BTN_PADDING;
+    position: relative;
     border: 0;
     font-family: inherit;
     line-height: $base_line_height;
@@ -31,8 +32,13 @@ $BTN_PADDING: ($space / 3) $space;
     background: #ddd;
     cursor: pointer;
     user-select: none;
+    transition: all .15s ease;
 
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    
+    &:hover, &:focus {
+        background: darken($brand_blue, 10%);
+    }
 
     &:focus {
         outline: none;
@@ -50,4 +56,9 @@ $BTN_PADDING: ($space / 3) $space;
 
 .btn--block {
     width: 100%;
+}
+
+.btn--blue {
+    background: $brand_blue;
+    color: $white;
 }

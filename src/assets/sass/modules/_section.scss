@@ -1,6 +1,6 @@
 .home-section {
 	padding: ($space * 3) 0;
-	border-top: solid 1px $black30;
+	//border-top: solid 1px $black30;
 	box-sizing: border-box;
 	min-height: 100vh;
 }
@@ -10,8 +10,10 @@
 	margin-bottom: $space;
 
 	&:after {
+		content: '';
 		position: absolute;
 		left: 0;
+		bottom: -($space / 4);
 		height: 2px;
 		width: 64px;
 		background: $brand_blue;

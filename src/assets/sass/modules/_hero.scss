@@ -39,6 +39,8 @@
 	position: absolute;
 	z-index: 1;
 	right: 0;
+	top: $space * 2;
 	opacity: 0.25;
 	max-width: 800px;
+	will-change: auto;
 }

@@ -36,6 +36,14 @@
 }
 
 
+.text-light {
+    font-weight: 300;
+}
+
+.text-normal {
+    font-weight: 500;
+}
+
 // Visual helper
 // ------------------------------------------------------------------------ //
 
@@ -74,4 +82,12 @@
 
 .invisible {
     visibility: hidden;
+}
+
+.margin-med {
+    margin-bottom: $space;
+}
+
+.margin-low {
+    margin-bottom: $space / 2;
 }

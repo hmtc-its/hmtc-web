@@ -1,0 +1,35 @@
+.footer {
+	padding: $space 0;
+	background: $black90;
+	//text-align: center;
+	color: $white;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-link {
+	margin-right: 3px;
+}
+
+.footer-anchor {
+	display: inline-block;
+	padding: 7px;
+	width: 38px;
+	height: 38px;
+	background: $white;
+	border-radius: 100px;
+	color: $black90;
+	text-align: center;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all .2s ease;
+
+	&:hover, &:focus {
+		color: $black90;
+		transform: translateY(-5px);
+		//transform: scale(1.2);
+	}
+}
