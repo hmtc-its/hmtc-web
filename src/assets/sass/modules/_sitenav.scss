@@ -3,7 +3,12 @@
 	z-index: 10;
 	right: $space * 2;
 	top: 50%;
+	display: none;
 	transform: translateY(-50%) translateX(50%) rotate(90deg);
+
+	@media #{$large} {
+		display: block;
+	}
 }
 
 .sitenav-items {

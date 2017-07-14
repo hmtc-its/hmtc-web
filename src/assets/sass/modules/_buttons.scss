@@ -62,3 +62,23 @@ $BTN_PADDING: ($space / 3) $space;
     background: $brand_blue;
     color: $white;
 }
+
+.btn--back {
+    display: none;
+    padding: 10px;
+    width: $base_font_size * 3.5;
+    height: $base_font_size * 3.5;
+    border-radius: 100px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: $base_font_size * 3;
+    line-height: $base_font_size * 2;
+
+    &:hover, &:focus {
+        color: $white;
+    }
+
+    @media #{$large} {
+        display: inline-block;
+    }
+}

@@ -1,13 +1,5 @@
 <template>
   <div id="app">
-    <nav class="sitenav">
-      <ul class="sitenav-items list-nostyle list-inline">
-        <li class="sitenav-list"><router-link to="/about" class="sitenav-anchor">about</router-link></li>
-        <li class="sitenav-list"><router-link to="/articles" class="sitenav-anchor">articles</router-link></li>
-        <li class="sitenav-list"><router-link to="/media" class="sitenav-anchor">media</router-link></li>
-        <li class="sitenav-list"><router-link to="/connect" class="sitenav-anchor">connect</router-link></li>
-      </ul>
-    </nav>
 
     <router-view></router-view>
 
@@ -16,7 +8,7 @@
       <div class="container">
         <div class="footer-container">
           <div>
-            <h4 class="margin-low">Connect with us</h4>
+            <h4 class="margin-low footer-title">Connect with us</h4>
             <ul class=" margin-low list-nostyle list-inline">
               <li class="footer-link"><a class="footer-anchor" href="//facebook.com/HMTCFTIf">fb</a></li>
               <li class="footer-link"><a class="footer-anchor" href="//instagram.com/hmtc_its">ig</a></li>
@@ -26,7 +18,7 @@
             <small>&copy; 2017 hmtc-its</small>
           </div>
           <div>
-            <p>jancuk</p>
+            <p>Lorem ipsum dolor sit amet</p>
           </div>
         </div>
       </div>

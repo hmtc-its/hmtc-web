@@ -1,8 +1,11 @@
 .home-section {
-	padding: ($space * 3) 0;
-	//border-top: solid 1px $black30;
+	padding-top: $space * 3;
 	box-sizing: border-box;
-	min-height: 100vh;
+	min-height: 600px;
+}
+
+.article-section {
+	padding: ($space * 3) 0;
 }
 
 .section-title {

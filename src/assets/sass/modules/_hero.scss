@@ -14,13 +14,14 @@
 	justify-content: center;
 	flex-direction: column;
 	min-height: 100vh;
+	//overflow: hidden;
 	//padding: ($space * 3) 0
 }
 
 .hero-title {
 	z-index: 5;
 	position: relative;
-	width: 700px;
+	width: 600px;
 	max-width: 100%;
 	font-size: ($base_font_size * 3.5);
 
@@ -42,5 +43,5 @@
 	top: $space * 2;
 	opacity: 0.25;
 	max-width: 800px;
-	will-change: auto;
+	will-change: transform;
 }

@@ -52,6 +52,13 @@ a {
     margin: 0 auto;
 }
 
+.divider {
+    height: 1px;
+    width: 64px;
+    background: $brand_blue;
+    margin-bottom: $space;
+}
+
 // 3 Header
 // ------------------------------------------------------------------------ //
 
