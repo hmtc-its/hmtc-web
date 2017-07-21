@@ -10,10 +10,10 @@
           <div>
             <h4 class="margin-low footer-title">Connect with us</h4>
             <ul class=" margin-low list-nostyle list-inline">
-              <li class="footer-link"><a class="footer-anchor" href="//facebook.com/HMTCFTIf">fb</a></li>
-              <li class="footer-link"><a class="footer-anchor" href="//instagram.com/hmtc_its">ig</a></li>
-              <li class="footer-link"><a class="footer-anchor" href="//twitter.com/hmtc_its">tw</a></li>
-              <li class="footer-link"><a class="footer-anchor" href="//line.me/ti/p/@YCP2851V">line</a></li>
+              <li class="footer-link"><a class="footer-anchor" href="//facebook.com/HMTCFTIf"><i class="fa fa-facebook"></i></a></li>
+              <li class="footer-link"><a class="footer-anchor" href="//instagram.com/hmtc_its"><i class="fa fa-instagram"></i></a></li>
+              <li class="footer-link"><a class="footer-anchor" href="//twitter.com/hmtc_its"><i class="fa fa-twitter"></i></a></li>
+              <li class="footer-link"><a class="footer-anchor" href="//line.me/ti/p/@YCP2851V"><small>LINE</small></a></li>
             </ul>
             <small>&copy; 2017 hmtc-its</small>
           </div>

@@ -1,4 +1,13 @@
 @font-face {
+  font-family: 'FontAwesome';
+  src: url('./assets/fonts/fontawesome-webfont.woff2') format('woff2'), 
+   url('./assets/fonts/fontawesome-webfont.woff') format('woff'), 
+   url('./assets/fonts/fontawesome-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Nunito';
   src: url('./assets/fonts/Nunito-Bold.woff') format('woff'),
        url('./assets/fonts/Nunito-Bold.ttf')  format('truetype');

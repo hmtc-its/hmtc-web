@@ -3,7 +3,7 @@
   	<section class="article-section">
   		<div class="bzg">
   			<div class="bzg_c" data-col="l1">
-  				<router-link class="btn btn--blue btn--back" to="/">&lsaquo;</router-link>
+  				<router-link class="btn btn--blue btn--back" to="/"><i class="fa fa-angle-left fa-2x"></i></router-link>
   			</div>
   			<div class="bzg_c" data-col="l3">
 	    		<h1>Title Ipsum Solor Sit Amet</h1>

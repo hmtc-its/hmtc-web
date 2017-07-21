@@ -71,8 +71,6 @@ $BTN_PADDING: ($space / 3) $space;
     border-radius: 100px;
     font-family: sans-serif;
     text-align: center;
-    font-size: $base_font_size * 3;
-    line-height: $base_font_size * 2;
 
     &:hover, &:focus {
         color: $white;
