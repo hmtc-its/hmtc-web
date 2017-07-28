@@ -1,8 +1,12 @@
 .footer {
+	display: none;
 	padding: $space 0;
 	background: $black;
-	//text-align: center;
 	color: $black50;
+
+	@media #{$large} {
+		display: block;
+	}
 }
 
 .footer-container {

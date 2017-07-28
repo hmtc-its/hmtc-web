@@ -53,7 +53,8 @@ a {
 }
 
 .divider {
-    height: 1px;
+    display: inline-block;
+    height: 2px;
     width: 64px;
     background: $brand_blue;
     margin-bottom: $space;

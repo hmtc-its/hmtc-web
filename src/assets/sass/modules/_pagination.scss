@@ -35,6 +35,8 @@ $pagination_active_bg       : $brand_blue;
         text-align: center;
         background: $black20;
         transition: all .2s ease;
+        margin: 0 ($space / 8);
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -42,7 +44,7 @@ $pagination_active_bg       : $brand_blue;
             background: lighten($pagination_active_bg, 40%);
         }
 
-        &.active {
+        &.is-active {
             color: $pagination_active_color;
             background: $pagination_active_bg;
             cursor: default;

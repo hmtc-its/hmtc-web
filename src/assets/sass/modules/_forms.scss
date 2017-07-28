@@ -3,9 +3,9 @@
 // ------------------------------------------------------------------------ //
 
 $input_border_size      : (1 * 1px);
-$input_border_color     : $black40;
+$input_border_color     : transparent;
 $input_padding          : ($space / 3);
-$input_bg               : #fff;
+$input_bg               : $black20;
 $input_disabled_color   : #A8A8A8;
 
 
@@ -49,10 +49,12 @@ input[type="number"] {
     border: solid $input_border_size $input_border_color;
     font-family: inherit;
     background: $input_bg;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: none;
+    transition: all 0.2s ease;
 
     &:focus {
-        border-color: #2669d3;
+        //border-color: $brand_blue;
+        background: lighten($black20, 2.5%);
         outline: none;
     }
 
@@ -92,4 +94,16 @@ input[type="number"] {
 
 .form-input--block {
     width: 100%;
+}
+
+.form-input--category {
+    background: none;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: $space / 4;
+
+    &:focus {
+        background: none;
+    }
 }

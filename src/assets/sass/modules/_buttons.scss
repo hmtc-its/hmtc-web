@@ -50,7 +50,6 @@ $BTN_PADDING: ($space / 3) $space;
     }
 }
 
-
 // Modifier
 // ------------------------------------------------------------------------ //
 
@@ -72,11 +71,61 @@ $BTN_PADDING: ($space / 3) $space;
     font-family: sans-serif;
     text-align: center;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         color: $white;
     }
 
     @media #{$large} {
         display: inline-block;
     }
+}
+
+
+.btn--article {
+    width: 49%;
+    background: $black10;
+
+    &:hover,
+    &:focus {
+        color: currentcolor;
+        background: $black20;
+    }
+}
+
+.btn--share {
+    display: inline-block;
+    padding: 7px 0;
+    width: 36px;
+    height: 36px;
+    background: $black20;
+    border-radius: 100px;
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer; 
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background: $black20;
+    }
+
+    &.--facebook {
+        background: brand(fb);
+        
+        &:hover,
+        &:focus {
+            background: darken(brand(fb), 10%);
+        }
+    }
+    
+    &.--twitter {
+        background: brand(tw);
+    }
+    
+    &.--gplus {
+        background: brand(gp);
+    }
+
 }
