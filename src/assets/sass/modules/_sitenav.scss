@@ -12,7 +12,7 @@
 }
 
 .sitenav-items {
-	
+	background: $white;
 }
 
 .sitenav-list {
@@ -22,25 +22,26 @@
 .sitenav-anchor {
 	position: relative;
 	color: currentcolor;
+  transition: all 0.2s ease;
 	cursor: pointer;
-
+		
 	&:before {
-		position: absolute;
 		content: '';
+		position: absolute;
+		width: 0;
 		bottom: -($space / 3);
 		left: 50%;
 		height: 2px;
 		background: $brand_blue;
-		width: 0;
-		transition: all 0.2s ease;
+		transition: all 0.4s ease;
 		transform: translateX(-50%);
+	}
+
+	&.is-active:before {
+		width: 90%;
 	}
 	
 	&:hover, &:focus {
-		color: currentcolor;
-
-		&:before {
-			width: 90%;
-		}
+		color: $brand_blue;
 	}
 }

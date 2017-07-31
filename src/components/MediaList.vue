@@ -8,5 +8,11 @@
 <script>
   export default {
     name: 'media-list',
+
+    props: ['scrollElement'],
+
+    mounted: function () {
+      this.scrollElement.media = this.$el.offsetTop
+    }
   }
 </script>

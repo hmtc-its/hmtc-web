@@ -17,6 +17,12 @@
 
 <script>
   export default {
-    name: 'featured-list'
+    name: 'featured-list',
+
+    props: ['scrollElement'],
+
+    mounted: function () {
+      this.scrollElement.article = this.$el.offsetTop
+    }
   }
 </script>

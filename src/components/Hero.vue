@@ -10,19 +10,27 @@
   export default {
     name: 'hero',
     
-    methods: {
-      parallax: function () {
-        let image = this.$el.querySelector('.hero-video')
+    data: function () {
+      return {
+        heroVideo: null
+      }
+    },
 
-        window.onscroll = () => {
-          let scrolled = window.pageYOffset
-          image.style.transform = `translateY(${scrolled * 0.2}px)`
-        }
+    methods: {
+      handleScroll: function () {
+        let scrolled = window.pageYOffset
+        this.heroVideo.style.transform = `translateY(${scrolled * 0.2}px)`
       }
     },
 
     mounted: function () {
-      this.parallax()
+      this.heroVideo = this.$el.querySelector('.hero-video')
+      window.addEventListener('scroll', this.handleScroll)
+    },
+
+    destroyed: function () {
+      window.removeEventListener('scroll', this.handleScroll);
     }
+
   }
 </script>
