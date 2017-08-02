@@ -24,7 +24,7 @@
     </div>
     <ul class="article-list list-nostyle">
       <li class="article-list-item" v-for="article in articleList[0]">
-        <router-link class="article-list-anchor" to="article">
+        <router-link class="article-list-anchor" :to="{path: '/article/' + article.id}">
           <div class="article-list-img-container">
             <img class="article-list-img" :src="article.img" alt="article_image">
           </div>

@@ -12,7 +12,7 @@
 }
 
 .sitenav-items {
-	background: $white;
+	background: rgba(255,255,255,0.5);
 }
 
 .sitenav-list {
@@ -23,6 +23,7 @@
 	position: relative;
 	color: currentcolor;
   transition: all 0.2s ease;
+  opacity: 0.5;
 	cursor: pointer;
 		
 	&:before {
@@ -37,11 +38,17 @@
 		transform: translateX(-50%);
 	}
 
-	&.is-active:before {
-		width: 90%;
-	}
+  &.is-active {
+    opacity: 1;
+  
+    &:before {
+      width: 90%;
+    }
+  }
+
 	
 	&:hover, &:focus {
-		color: $brand_blue;
+    color: currentColor;
+    opacity: 1;
 	}
 }

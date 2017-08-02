@@ -11,8 +11,8 @@
   			</div>
 
   			<div class="bzg_c" data-col="l3">
-	    		<h1>Title Ipsum Solor Sit Amet</h1>
-	    		<p class="no-margin">Selasa, Nov 12 2013</p>
+	    		<h1>{{article.title}}</h1>
+	    		<p class="no-margin">{{article.date}}</p>
 	    		<h3>Kaderisasi dan Pemetaan</h3>
 	    		<div>
 	    			<div class="divider"></div>
@@ -26,9 +26,7 @@
   				
   				<div class="article-content">
 	  				<img class="margin-med" src="../assets/img/wideph.png" alt="">
-		    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aliquam laboriosam, voluptatem reprehenderit nostrum minima quia, ut ipsum! Quisquam possimus distinctio nulla iusto voluptatibus atque, eligendi. Voluptate doloribus, officiis et. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, consequatur, minus. Facilis ab ipsa aliquid. Voluptas maiores eos aliquam ipsum aliquid, architecto enim eligendi, dicta quas porro hic accusamus ipsa!</p>
-		    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum adipisci ipsam incidunt perferendis aut tenetur expedita minima facilis inventore sint dolores excepturi laborum suscipit quasi provident perspiciatis placeat, obcaecati eum!</p>
-		    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aliquam laboriosam, voluptatem reprehenderit nostrum minima quia, ut ipsum! Quisquam possimus distinctio nulla iusto voluptatibus atque, eligendi. Voluptate doloribus, officiis et. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, consequatur, minus. Facilis ab ipsa aliquid. Voluptas maiores eos aliquam ipsum aliquid, architecto enim eligendi, dicta quas porro hic accusamus ipsa!</p>
+		    		{{article.body}}
   				</div>
 				  
 				  <div class="article-comment">
@@ -61,9 +59,7 @@
 
 
   			</div>	
-
   		</div>
-
   	</div>
   </section>
 </template>
@@ -71,13 +67,33 @@
 <script>
 	export default {
 	  name: 'article',
-	  methods: {
-	  	scrollToTop: () => {
+	  
+		data: function () {
+			return {
+				article: {}
+			}
+		},
+
+		methods: {
+	  	scrollToTop: function () {
 	  		window.scrollTo(0, 0)
-	  	}
+	  	},
+			getArticleDetail: function (articleId) {
+				const articleDetailAPI = `http://localhost/freeprojects/hmtc-api-php/public/api/getArticleDetail/${articleId}`
+			
+				this.axios.get(articleDetailAPI)
+					.then(res => {
+						this.article = {...res.data}
+					})
+					.catch(err => {
+						alert(err)
+					})
+			}
 	  },
-	  mounted: function () {
+	  
+		mounted: function () {
 	  	this.scrollToTop()
+			this.getArticleDetail(this.$route.params.articleId)
 	  }
 	}
 </script>
