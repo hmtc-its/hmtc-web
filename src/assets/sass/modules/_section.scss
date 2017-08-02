@@ -1,7 +1,8 @@
 .home-section {
 	padding-top: $space * 3;
 	box-sizing: border-box;
-	min-height: 600px;
+	min-height: 550px;
+	//margin-bottom: $space * 2;
 }
 
 .section-title {
@@ -17,4 +18,8 @@
 		width: 64px;
 		background: $brand_blue;
 	}
+}
+
+.section-featured {
+	min-height: 0;
 }

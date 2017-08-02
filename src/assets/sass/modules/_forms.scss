@@ -99,11 +99,26 @@ input[type="number"] {
 .form-input--category {
     background: none;
     border: none;
+    //border-bottom: solid 1px $brand_blue;
     padding-left: 0;
     padding-right: 0;
-    margin-top: $space / 4;
 
     &:focus {
         background: none;
+    }
+}
+
+.form-label--filter {
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+
+    &:after {
+        content: '\f105';
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 100%;
     }
 }

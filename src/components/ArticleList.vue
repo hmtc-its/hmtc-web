@@ -1,12 +1,21 @@
 <template>
 	<section class="home-section" id="article">
-    <div class="bzg">
-      <div class="bzg_c" data-col="l8">
-        <h1 class="section-title">Recent Articles</h1>
+    <h1 class="section-title">Articles</h1>
+    <div class="featured">
+      <div class="featured-left">
+        <a><img src="../assets/img/wideph.png" alt=""></a>
       </div>
-      <div class="bzg_c text-right" data-col="l4">
-        <form class="">
-          <label class="form-label sr-only" for="articleCategory">Category</label>
+      <div class="featured-right">
+        <a><img src="../assets/img/wideph.png" alt=""></a>
+        <a><img src="../assets/img/wideph.png" alt=""></a>
+        <a><img src="../assets/img/wideph.png" alt=""></a>
+        <a><img src="../assets/img/wideph.png" alt=""></a>
+      </div>
+    </div>
+    <div class="bzg">
+      <div class="bzg_c" data-col="l6">
+        <form class="margin-med">
+          <label class="form-label form-label--filter" for="articleCategory">Filter</label>
           <select class="form-input form-input--category" id="articleCategory" name="articleCategory">
             <option value="">All Categories</option>
             <option value="">Kaderisasi dan Pemetaan</option>
@@ -16,8 +25,16 @@
           </select>
         </form>
       </div>
+      <div class="bzg_c text-right" data-col="l6">
+        <button class="btn btn--trans">
+          <i class="fa fa-list"></i>
+        </button>
+        <button class="btn btn--trans">
+          <i class="fa fa-th"></i>
+        </button>
+      </div>
     </div>
-    <div class="bzg_c" data-col="l12" v-show="articleLoading">
+    <div v-show="articleLoading">
       <div class="text-center" style="margin-top:10em">
         <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
       </div>
@@ -59,6 +76,8 @@
       }
     },
 
+    props: ['scrollElement'],
+
     methods: {
       getArticleList: function(page) {
         const articleListAPI = `http://localhost/freeprojects/hmtc-api-php/public/api/getArticles/${page}`
@@ -90,6 +109,7 @@
 
     mounted: function () {
       this.getArticleList(1)
+      this.scrollElement.article = this.$el.offsetTop
     }
   }
 </script>

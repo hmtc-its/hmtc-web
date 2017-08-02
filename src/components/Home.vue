@@ -3,7 +3,6 @@
     <sitenav :scrollPointer="scrollPointer" :scrollElement="scrollElement" :scrollSettings="scrollSettings"></sitenav>
     <div class="container">
       <hero></hero>
-      <featured-list :scrollElement="scrollElement"></featured-list>
       <article-list :scrollElement="scrollElement"></article-list>
       <media-list :scrollElement="scrollElement"></media-list>
       <about-list :scrollElement="scrollElement"></about-list>
@@ -16,7 +15,6 @@
   import Hero from './Hero'
   import ArticleList from './ArticleList'
   import MediaList from './MediaList'
-  import FeaturedList from './FeaturedList'
   import AboutList from './AboutList'
 
   export default {
@@ -45,7 +43,6 @@
     components: {
       ArticleList,
       MediaList,
-      FeaturedList,
       Hero,
       Sitenav,
       AboutList
