@@ -1,0 +1,53 @@
+.sitenav {
+	position: fixed;
+	z-index: 10;
+	right: $space * 2;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%) translateX(50%) rotate(90deg);
+
+	@media #{$large} {
+		display: block;
+	}
+}
+
+.sitenav-items {
+	//background: rgba(255,255,255,0.5);
+}
+
+.sitenav-list {
+	padding: 0 ($space / 2);
+}
+
+.sitenav-anchor {
+	position: relative;
+	color: currentcolor;
+  transition: all 0.2s ease;
+  opacity: 0.5;
+	cursor: pointer;
+		
+	&:before {
+		content: '';
+		position: absolute;
+		width: 0;
+		bottom: -($space / 3);
+		left: 50%;
+		height: 2px;
+		background: $brand_blue;
+		transition: all 0.4s ease;
+		transform: translateX(-50%);
+	}
+
+  &.is-active {
+    opacity: 1;
+  
+    &:before {
+      width: 90%;
+    }
+  }
+	
+	&:hover, &:focus {
+    color: currentColor;
+    opacity: 1;
+	}
+}

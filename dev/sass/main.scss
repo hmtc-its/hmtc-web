@@ -1,0 +1,81 @@
+/*! [PROJECT_NAME] | Suitmedia */
+
+//  1. Font-face
+//  2. Basic styles
+//  3. Header
+//  4. Page styles
+//  5. Footer
+
+@import "partial/normalize";
+@import "partial/variables";
+@import "partial/resets";
+@import "partial/helpers";
+
+@import "mixin/mixin";
+@import "modules/modules";
+@import "plugin/plugin";
+
+// 1 Font-face
+// ------------------------------------------------------------------------ //
+
+
+
+// 2 Basic styles
+// ------------------------------------------------------------------------ //
+
+html {
+    font: 400 $base_font_size $base_font_family;
+    line-height: $base_line_height;
+}
+
+body {
+    color: $black;
+}
+
+a {
+    color: $link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $link_hover;
+    }
+}
+
+.block {
+    margin-bottom: $space;
+}
+
+.container {
+    width: 85%;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @media #{$xlarge} {
+        max-width: 1200px;
+    }
+    
+    @media #{$xxlarge} {
+        max-width: 1440px;
+    }
+    
+}
+
+.divider {
+    display: inline-block;
+    height: 2px;
+    width: 64px;
+    background: $brand_blue;
+    margin-bottom: $space;
+}
+
+// 3 Header
+// ------------------------------------------------------------------------ //
+
+
+// 4 Page styles
+// ------------------------------------------------------------------------ //
+
+
+// 5 Footer
+// ------------------------------------------------------------------------ //

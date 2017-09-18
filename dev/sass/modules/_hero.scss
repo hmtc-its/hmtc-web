@@ -1,0 +1,125 @@
+.site-logo {
+	position: relative;
+	z-index: 5;
+	margin-bottom: $space;
+	display: block;
+	height: 128px;
+  clear: both;
+  
+  @media #{$small} {
+    height: 80px;
+    margin-bottom: $space / 3;
+    font-size: ($base_font_size * 2);
+  }
+}
+
+.hero {
+  display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+  min-height: 100vh;
+  
+  @media #{$small} {
+    background: url(../img/home-vid.jpg) center;
+    background-size: cover;
+    background-attachment: fixed;
+    will-change: true;
+    color: $white;
+  }
+}
+
+.hero-title {
+	z-index: 5;
+	position: relative;
+	width: 600px;
+	max-width: 100%;
+  font-size: ($base_font_size * 3.5);
+  
+	&:before {
+    content: '';
+		position: absolute;
+		top: 24px;
+		right: calc(100% + 32px);
+		height: 3px;
+		width: 100%;
+		background: $brand_blue;
+  }
+  
+  @media #{$small} {
+    width: 100%;
+    font-size: ($base_font_size * 2);
+  }
+  
+  @media #{$xlarge} {
+    width: 800px;
+    font-size: ($base_font_size * 4.5);
+  }
+  
+  @media #{$xxlarge} {
+    font-size: ($base_font_size * 5);
+  }
+}
+
+//background: url(../img/home-vid.jpg);
+.hero-video {
+	position: absolute;
+	z-index: 1;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+	opacity: 0.25;
+  will-change: true;
+  
+  @media #{$small} {
+    display: none;
+  }
+  
+  @media #{$large} {
+    top: 12vh;
+    max-width: 800px;
+    height: auto;
+  }
+  
+  @media #{$xlarge} {
+    max-width: 1000px;
+  }
+
+  @media #{$xxlarge} {
+    max-width: 1200px;
+  }
+}
+
+.hero-scroll {
+  color: $black;
+  
+  &:focus,
+  &:hover {
+    color: $black90;
+  }
+
+  @media #{$small} {
+    color: $white;
+  }
+}
+
+.hero-scroll-arrow {
+  animation: scroll infinite 2s;
+  margin-right: $space / 6;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

@@ -1,0 +1,23 @@
+.home-section {
+  min-height: 550px;
+  padding-top: $space * 3;
+}
+
+.section-title {
+  position: relative;
+	margin-bottom: $space;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -($space / 4);
+		height: 2px;
+		width: 64px;
+		background: $brand_blue;
+	}
+}
+
+.section-featured {
+	min-height: 0;
+}
