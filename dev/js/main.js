@@ -108,7 +108,7 @@
                 })
             }])
 
-            .directive( 'ngReady', function( $parse ) {
+            .directive('ngReady', ['$parse', ($parse) => {
                 return {
                     restrict: 'A',
                     link: function( $scope, elem, attrs ) {    
@@ -120,7 +120,7 @@
                        })
                     }
                  }
-             })
+             }])
              
         }
     }
