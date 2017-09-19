@@ -5,6 +5,7 @@
 	display: block;
 	height: 128px;
   clear: both;
+  pointer-events: none;
   
   @media #{$small} {
     height: 80px;
@@ -72,6 +73,8 @@
   width: 100%;
 	opacity: 0.25;
   will-change: true;
+  background: url(../img/home-vid.jpg);
+  pointer-events: none;
   
   @media #{$small} {
     display: none;
@@ -94,11 +97,6 @@
 
 .hero-scroll {
   color: $black;
-  
-  &:focus,
-  &:hover {
-    color: $black90;
-  }
 
   @media #{$small} {
     color: $white;

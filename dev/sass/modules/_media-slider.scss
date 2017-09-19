@@ -1,0 +1,145 @@
+$media_slider_height: 350px;
+$media_slider_img_width : 270px;
+
+.media-slider {
+  position: relative;
+}
+
+.media-slider-wrapper {
+  background: $brand_blue;
+}
+
+.media-slider-item {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  
+  @media #{$small} {
+    flex-wrap: wrap;
+  }
+}
+
+.media-slider-img {
+  height: $media_slider_height;
+  width: $media_slider_img_width;
+  object-fit: cover;
+  object-position: top;
+  transition: all .2s ease;
+  
+  @media #{$small} {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.media-slider-desc {
+  background: url(../img/bluepress-logo.png) no-repeat;
+  background-position: 95% 80%;
+  background-size: 30%;
+  width: 100%;
+  height: $media_slider_height;
+  color: $white;
+  padding: $space;
+  box-sizing: border-box;
+  
+  @media #{$small} {
+    background-size: 50%;
+  }
+}
+
+
+.slick-arrow {
+  position: absolute;
+  bottom: $space;
+  z-index: 5;
+  height: 40px;
+  width: 40px;
+  background: $white;
+  border: none;
+  border-radius: 100px;
+  color: transparent;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'fontAwesome';
+    font-size: $base_font_size * 1.2;
+    color: $black;
+  }
+}
+
+.slick-next {
+  right: $space;
+  
+  &:after {
+    content: '\f105';
+  }
+}
+
+.slick-prev {
+  right: $space;
+  transform: translateX(-56px);
+  
+  &:after {
+    content: '\f104';
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: $space / 2;
+  left: $media_slider_img_width;
+  padding-left: 0;
+  transform: translateX($space);
+  display: inline-block;
+  
+  li {
+    display: inline-block;
+    opacity: 0.5;
+    
+    button {
+      position: relative;
+      background: transparent;
+      padding: 0 ($space / 2) 0 0;
+      border: none;
+      color: transparent;
+      font-size: $base_font_size * 0.8;
+      
+      &:hover {
+        cursor: pointer;
+      }
+      
+      &:focus {
+        outline: none;
+      }
+      
+      &:after {
+        content: "\f111";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        font-family: 'fontAwesome';
+      }
+    }
+    
+    &.slick-active {
+      opacity: 1;
+    }
+  }
+  
+  @media #{$small} {
+    display: none !important;
+  }
+}

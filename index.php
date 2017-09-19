@@ -12,7 +12,7 @@
   <meta property="og:title" content="HMTC ITS">
   <meta property="og:site_name" content="HMTC ITS - Official Portal">
   <meta property="og:description" content="Himpunan Mahasiswa Teknik Computer-Informatika ITS">
-  <meta property="og:image" content="assets/img/apple-icon.png">
+  <meta property="og:image" content="assets/img/favicon.png">
   <meta property="og:type" content="website">
   <meta property="fb:app_id" content="">
 
@@ -20,9 +20,9 @@
   <meta name="twitter:site" content="HMTC ITS">
   <meta name="twitter:description" content="Himpunan Mahasiswa Teknik Computer-Informatika ITS">
   <meta name="twitter:title" content="HMTC ITS">
-  <meta name="twitter:image" content="assets/img/apple-icon.png">
+  <meta name="twitter:image" content="assets/img/favicon.png">
 
-  <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
   <title>Himpunan Mahasiswa Teknik Computer Informatika ITS</title>
@@ -35,6 +35,10 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   
+  <div class="page-loading" ng-class="{'is-hidden': !pageLoading}">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  </div>
+
   <header>
     <nav class="sitenav">
       <ul class="sitenav-items list-nostyle list-inline">
@@ -42,10 +46,10 @@
           <a class="sitenav-anchor" ng-class="{'is-active': navPointer.onArticle}" ng-href="#!/articles">articles</a>
       </li>
       <li class="sitenav-list">
-          <a class="sitenav-anchor" ng-class="{'is-active': navPointer.onMedia}" ng-href="#!/media">media</a>
+          <a class="sitenav-anchor" ng-class="{'is-active': navPointer.onStory}" ng-href="#!/story">story</a>
       </li>
       <li class="sitenav-list">
-          <a class="sitenav-anchor" ng-class="{'is-active': navPointer.onStory}" ng-href="#!/story">story</a>
+          <a class="sitenav-anchor" ng-class="{'is-active': navPointer.onMedia}" ng-href="#!/media">media</a>
       </li>
       <li class="sitenav-list">
           <a class="sitenav-anchor" href="#!">connect</a>
@@ -80,11 +84,16 @@
   </footer>
 
   <script>window.myPrefix = '';</script>
-  <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,promise,fetch"></script>
+  <!-- <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,promise,fetch"></script> -->
+  <script src="assets/js/vendor/jquery.min.js"></script>
   <script src="assets/js/vendor/object-fit-images.min.js"></script>
+  <script src="assets/js/vendor/slick.min.js"></script>
   <script src="assets/js/vendor/angular.min.js"></script>
+  <script src="assets/js/vendor/angular-slick.min.js"></script>
   <script src="assets/js/vendor/angular-route.min.js"></script>
   <script src="assets/js/vendor/angular-sanitize.min.js"></script>
+  <!-- <script src="assets/js/vendor/angular-cookies.min.js"></script> -->
+  <!-- <script src="assets/js/vendor/angular-storage.min.js"></script> -->
   <script src="assets/js/main.min.js"></script>
 </body>
 </html>

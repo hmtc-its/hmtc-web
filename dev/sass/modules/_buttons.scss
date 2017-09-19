@@ -27,8 +27,10 @@ $BTN_PADDING: ($space / 3) $space;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    color: $black80;
-    background: #ddd;
+    color: $black;
+    font-weight: bold;
+    border-radius: 100px;
+    background: $black20;
     cursor: pointer;
     user-select: none;
 
@@ -54,4 +56,25 @@ $BTN_PADDING: ($space / 3) $space;
 
 .btn--trans {
     background: transparent;
+}
+
+.btn--white {
+    background: $white;
+    
+    &:hover,
+    &:focus {
+        //color: lighten($brand_blue, 40%);
+        background: $black20;
+    }
+}
+
+.btn--blue {
+    background: $brand_blue;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        color: lighten($brand_blue, 40%);
+        background: darken($brand_blue, 5%);
+    }
 }

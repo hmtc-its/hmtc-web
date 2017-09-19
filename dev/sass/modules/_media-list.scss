@@ -9,7 +9,7 @@
   margin-bottom: $space / 2;
 
   @media #{$small} {
-    width: 100%;
+    width: 49%;
   }
 }
 
@@ -24,6 +24,10 @@
   &:focus {
     color: currentColor;
   }
+  
+  @media #{$small} {
+    height: auto;
+  }
 }
 
 .media-list-img {
@@ -31,7 +35,7 @@
   height: 150px;
   margin-right: $space / 2;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all .2s ease;
   
   .media-list-anchor:hover & {

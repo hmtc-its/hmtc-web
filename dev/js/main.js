@@ -33,7 +33,7 @@
         },
         
         angular() {
-            angular.module('hmtc-app', ['ngRoute', 'ngSanitize'])
+            angular.module('hmtc-app', ['ngRoute', 'ngSanitize', 'slick'])
 
             .controller('mainController', ['$rootScope', '$scope', '$route', ($rootScope, $scope, $http, $route) => {
                 $rootScope.pageLoading = true
@@ -66,12 +66,12 @@
                     
                     window.addEventListener('scroll', () => {
                         let scrolled = window.pageYOffset
-                        video.style.transform = `translateY(${scrolled * 0.2}px)`
+                        video.style.transform = `translateY(${scrolled * 0.22}px)`
                         
-                        if ( scrolled >= sectionPointer.onStory ) {
-                            navChanger(false, false, true)
-                        } else if ( scrolled >= sectionPointer.onMedia ) {
+                        if ( scrolled >= sectionPointer.onMedia ) {
                             navChanger(false, true, false)
+                        } else if ( scrolled >= sectionPointer.onStory ) {
+                            navChanger(false, false, true)
                         } else if ( scrolled >= sectionPointer.onArticle ) {
                             navChanger(true, false, false)
                         } else {
@@ -81,7 +81,10 @@
                 }
 
                 $scope.init = () => {
-                    $scope.scrollEvent()
+                    $rootScope.pageLoading = false
+                    setTimeout(() => {
+                        $scope.scrollEvent()
+                    }, 500)
                 }
             }])
 

@@ -2,6 +2,7 @@
 	padding: $space 0;
 	background: $black;
 	color: $black50;
+	margin-top: $space * 4;
 }
 
 .footer-title {
@@ -19,8 +20,8 @@
 .footer-anchor {
 	display: inline-block;
 	padding: 7px 0;
-	width: 36px;
-	height: 36px;
+	width: 40px;
+	height: 40px;
 	background: $black50;
 	border-radius: 100px;
 	color: $black;
