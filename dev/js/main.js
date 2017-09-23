@@ -42,49 +42,94 @@
                     onMedia: false,
                     onStory: false
                 }
-            }])
 
+                $rootScope.navChanger = (onArticle, onMedia, onStory) => {
+                    $rootScope.navPointer.onArticle = onArticle
+                    $rootScope.navPointer.onMedia = onMedia
+                    $rootScope.navPointer.onStory = onStory
+                }
+            }])
+            
             .controller('homeController', ['$rootScope', '$scope', '$http', ($rootScope, $scope, $http) => {
                 $scope.isPageActive = 1
+                $scope.video = document.querySelector('.hero-video')
+                $scope.scrollOffset = 150
 
-                $scope.scrollEvent = () => {
-                    const video = document.querySelector('.hero-video')
-                    const scrollOffset = 150
-
-                    const sectionPointer = {
-                        onArticle: document.querySelector('.article-section').offsetTop - scrollOffset,
-                        onMedia: document.querySelector('.media-section').offsetTop - scrollOffset,
-                        onStory: document.querySelector('.story-section').offsetTop - scrollOffset
-                    }
-
-                    const navChanger = (onArticle, onMedia, onStory) => {
-                        $rootScope.navPointer.onArticle = onArticle
-                        $rootScope.navPointer.onMedia = onMedia
-                        $rootScope.navPointer.onStory = onStory
-                        $rootScope.$digest()
-                    }
+                $scope.sectionPointer = {
+                    onArticle: new Number,
+                    onMedia: new Number,
+                    onStory: new Number
+                }
+                
+                $scope.scrollEventHandler = () => {
+                    let scrolled = window.pageYOffset
+                    $scope.video.style.transform = `translateY(${scrolled * 0.22}px)`
                     
-                    window.addEventListener('scroll', () => {
-                        let scrolled = window.pageYOffset
-                        video.style.transform = `translateY(${scrolled * 0.22}px)`
-                        
-                        if ( scrolled >= sectionPointer.onMedia ) {
-                            navChanger(false, true, false)
-                        } else if ( scrolled >= sectionPointer.onStory ) {
-                            navChanger(false, false, true)
-                        } else if ( scrolled >= sectionPointer.onArticle ) {
-                            navChanger(true, false, false)
-                        } else {
-                            navChanger(false, false, false)
-                        }
-                    })
+                    if ( scrolled >= $scope.sectionPointer.onMedia ) {
+                        $rootScope.navChanger(false, true, false)
+                    } else if ( scrolled >= $scope.sectionPointer.onStory ) {
+                        $rootScope.navChanger(false, false, true)
+                    } else if ( scrolled >= $scope.sectionPointer.onArticle ) {
+                        $rootScope.navChanger(true, false, false)
+                    } else {
+                        $rootScope.navChanger(false, false, false)
+                    }
+                    $rootScope.$digest()
+                }
+
+                $scope.scrollEvent = (isInit) => {
+                    $scope.sectionPointer.onArticle = document.querySelector('.article-section').offsetTop - $scope.scrollOffset,
+                    $scope.sectionPointer.onMedia = document.querySelector('.media-section').offsetTop - $scope.scrollOffset
+                    $scope.sectionPointer.onStory = document.querySelector('.story-section').offsetTop - $scope.scrollOffset
+
+                    if (isInit) {
+                        window.addEventListener('scroll', $scope.scrollEventHandler)
+                    } else {
+                        window.removeEventListener('scroll', $scope.scrollEventHandler)
+                    }
                 }
 
                 $scope.init = () => {
                     $rootScope.pageLoading = false
                     setTimeout(() => {
-                        $scope.scrollEvent()
-                    }, 500)
+                        $scope.scrollEvent(1)
+                    }, 300)
+                }
+
+                $scope.$on('$destroy', () => {
+                    $rootScope.pageLoading = true
+                    $scope.scrollEvent(0)
+                })
+                
+            }])
+            
+            .controller('articleController', ['$rootScope', '$scope', '$http', '$sce', ($rootScope, $scope, $http, $sce) => {
+                $scope.article = {
+                    id: 1,
+                    title: '[Recap Event] Academy: Technobiz oleh KWU HMTC dan FTIF Festival 2017',
+                    content: `
+                        <p>Competitive Programming sendiri adalah salah satu cabang kompetisi komputer yang cukup populer. Pada bidang ini, kamu akan ditantang untuk menjadi problem solver sejati. Dan menuliskan solusimu sendiri dalam bahasa pemrograman.</p>
+                        
+                        <p>Quadrathlon HMTC tidak hanya menawarkan kompetisi sebagai ajang tempatmu mengasah kemampuan, tetapi kami juga akan mengadakan pelatihan khusus untukmu yang tertarik mendalami bidang ini!
+                        Pelatihan: Sabtu, 27 Mei 8.00 Pagi, Laboratorium Pemrograman
+                        Kompetisi: Minggu, 28 Mei 8.00 Pagi, Laboratorium Pemrograman</p>
+                        
+                        <p>Data Mining adalah salah satu kompetisi komputer yang sangat menarik untuk diikuti. Kompetisi ini menantangmu untuk melakukan ‘mining’ pada sebuah dataset, dan menampilkan hasilnya dengan tingkat akurasi setinggi mungkin.</p>
+                        
+                        <p>TC adalah salah satu jurusan yang cukup berprestasi dalam bidang ini pada banyak kompetisi. Tentunya kita tidak tinggal diam ketika Gemastik memanggil!</p>
+                    
+                        <p>Tidak hanya mengadakan kompetisi, Quadrathlon HMTC akan mengadakan pelatihan Data Mining        pra-kompetisi untuk kamu yang penasaran sama bidang ini!</p>
+                        <ul><li>Pelatihan: Minggu, 28 Mei 12.00 Siang, Laboratorium Pemrograman</li>
+                            <li>Kompetisi: Senin, 29 Mei 9.00 Pagi, Launching Dataset</li></ul>
+                    `,
+                    date: 'Wednesday, 20 September 2017',
+                    dept: 'Kewirausahaan',
+                    thumb: 'assets/img/artikel.jpg'
+                }
+                
+                $scope.init = () => {
+                    $rootScope.pageLoading = false
+                    $rootScope.navChanger(true, false, false)
                 }
             }])
 
@@ -104,7 +149,8 @@
                     templateUrl: 'story.php'
                 })
                 .when('/article/:articleId?', {
-                    templateUrl: 'article-detail.php'
+                    templateUrl: 'article-detail.php',
+                    controller: 'articleController'
                 })
                 .otherwise({
                     redirectTo: '/'

@@ -1,0 +1,22 @@
+.article-title {
+
+  &:before {
+    content: '';
+		position: absolute;
+		top: 24px;
+		right: calc(100% + 32px);
+		height: 3px;
+		width: 100%;
+		background: $brand_blue;
+  }
+}
+
+.article-container {
+  padding-top: $space * 2;
+}
+
+.article-content {
+  p {
+    margin-bottom: $space / 4;
+  }
+}

@@ -1,4 +1,4 @@
-<div ng-ready="init()">
+<div ng-ready="init()" ng-destroy="destroy()">
   <section class="hero">
     <div class="container">
       <img class="site-logo" src="assets/img/logo.png">
