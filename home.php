@@ -1,4 +1,4 @@
-<div ng-ready="init()" ng-destroy="destroy()">
+<div ng-ready="init()" ng-init="resetNav()">
   <section class="hero">
     <div class="container">
       <img class="site-logo" src="assets/img/logo.png">
@@ -13,33 +13,29 @@
     </div>
   </section>
 
-  <section class="home-section article-section">
+  <section class="home-section article-section" ng-controller="articleController" ng-init="initHome()">
     <div class="container">
       <h1 class="section-title">Articles</h1>
 
       <ul class="media-grid list-nostyle clearfix block">
-        <li class="media-grid-item media-grid-item--large">
-          <a class="media-grid-anchor" ng-href="#!/article/1">
-            <img class="media-grid-img" src="assets/img/artikel.jpg" alt="article">
+
+        <li class="media-grid-item" 
+          ng-repeat="articleLatestItem in articleLatest"
+          ng-class="{'media-grid-item--large' : $first}"
+        >
+          <a class="media-grid-anchor" ng-href="#!/article/{{articleLatestItem.id}}">
+            <img class="media-grid-img" ng-src="{{articleLatestItem.thumb}}" alt="{{articleLatestItem.title}}">
             <div class="media-grid-desc">
-              <small>Wed, 25 Oct 2017 - Entrepreneurship</small>
-              <h3>[Recap Event] Academy: Technobiz oleh KWU HMTC dan FTIF Festival 2017</h3>
+              <small><span ng-bind="articleLatestItem.date"></span> - <span ng-bind="articleLatestItem.dept"></span></small>
+              <h3 ng-class="{'media-grid-title--small': !$first}" ng-bind="articleLatestItem.title"></h3>
             </div>
           </a>
         </li>
-        <li class="media-grid-item" ng-repeat="x in ['a','b','c','d']">
-          <a class="media-grid-anchor" ng-href="#!/article/1">
-            <img class="media-grid-img" src="assets/img/artikel.jpg" alt="article_image">
-            <div class="media-grid-desc">
-              <small>Wed, 25 Oct 2017 - Entrepreneurship</small>
-              <p><strong>[Recap Event] Academy: Technobiz oleh KWU HMTC dan FTIF Festival 2017</strong></p>
-            </div>
-          </a>
-        </li>
+
       </ul>
 
       <div class="bzg block">
-        <div class="bzg_c" data-col="l12">
+        <div class="bzg_c" data-col="l6">
           <form>
             <label class="form-label form-label--filter" for="articleCategory"><strong>Category</strong></label>
             <select class="form-input form-input--category" id="articleCategory" name="articleCategory">
@@ -51,25 +47,28 @@
             </select>
           </form>
         </div>
+        <div class="bzg_c text-right" data-col="l6">
+          <button class="btn" ng-disabled="pagination.currentPage === 1">
+            <i class="fa fa-angle-left"></i>
+          </button>
+          <button class="btn" ng-disabled="pagination.currentPage === pagination.totalPage">
+            <i class="fa fa-angle-right"></i>
+          </button>
+        </div>
       </div>
 
       <ul class="media-list list-nostyle block">
-        <li class="media-list-item" ng-repeat="x in ['a','b','c','d','e','f']">
-          <a class="media-list-anchor" ng-href="#!/article/1">
-            <img class="media-list-img block-low" src="assets/img/artikel.jpg" alt="article_image">
+        <li class="media-list-item" ng-repeat="article in articleList">
+          <a class="media-list-anchor" ng-href="#!/article/{{article.id}}">
+            <img class="media-list-img block-low" ng-src="{{article.thumb}}" alt="{{article.title}}">
             <div class="media-list-desc">
-              <h4>[Recap Event] Academy: Technobiz oleh KWU HMTC dan FTIF Festival 2017</h4>
-              <small>Wed, Oct 25 2017 - Entrepreneurship</small>
+              <h4 ng-bind="article.title"></h4>
+              <small><span ng-bind="article.date"></span> <span ng-bind="article.category"></span></small>
             </div>
           </a>
         </li>
       </ul>
 
-      <ul class="pagination text-center">
-        <li ng-repeat="page in [1,2,3,4]">
-          <a ng-class="{'is-active': isPageActive === page}" ng-bind="page" href="#!"></a>
-        </li>
-      </ul>
     </div>
   </section>
 

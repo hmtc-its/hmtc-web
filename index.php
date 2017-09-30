@@ -34,9 +34,25 @@
   <!--[if lt IE 9]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  
+  <div class="page-loading" ng-class="{'is-hidden': !pageError}">
+    <div class="page-loading-container">
+      <p><i class="fa fa-frown-o fa-5x"></i></p>
+      <p><strong>Sorry, something went wrong. <br>Please reload the page.</strong><p>
+    </div>
+  </div>
   <div class="page-loading" ng-class="{'is-hidden': !pageLoading}">
-    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <div class="page-loading-container">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+  </div>
+      
+  <div ng-if="!isHome()">
+    <a class="btn btn--back">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a class="btn btn--back btn--home" ng-href="#!">
+      <i class="fa fa-home"></i>
+    </a>
   </div>
 
   <header>
@@ -78,8 +94,11 @@
             <li class="footer-link"><a class="footer-anchor" href="//line.me/ti/p/@hmtc_its" target="_blank">
               <small>LINE</small></a>
             </li>
+            <li class="footer-link"><a class="footer-anchor" href="//github.com/hmtc-its" target="_blank">
+              <i class="fa fa-github"></i></a>
+            </li>
           </ul>
-          <small>&copy; 2017 hmtc-its</small>
+          <small>&copy; 2017 Medfo HMTC-ITS</small>
     </div>
   </footer>
 

@@ -43,6 +43,7 @@ $BTN_PADDING: ($space / 3) $space;
     &[disabled] {
         cursor: not-allowed;
         pointer-events: none;
+        opacity: 0.5;
     }
 }
 
@@ -76,5 +77,43 @@ $BTN_PADDING: ($space / 3) $space;
     &:focus {
         color: lighten($brand_blue, 40%);
         background: darken($brand_blue, 5%);
+    }
+}
+
+.btn--back {
+    position: fixed;
+    left: $space * 3;
+    top: $space * 2;
+    z-index: 10;
+    width: 56px;
+    height: 56px;
+    background: $brand_blue;
+    color: $white;
+    padding: 0;
+    text-align: center;
+    transition: all .2s ease;
+    
+    &:hover,
+    &:focus {
+        color: $white;
+        transform: scale(1.1);
+    }
+    
+    .fa {
+        font-size: $base_font_size * 1.5;
+        line-height: 56px;
+    }
+}
+
+.btn--home {
+    background: $black20;
+    color: $black;
+    top: $space * 2;
+    transform: translateY(70px);
+    
+    &:hover,
+    &:focus {
+        color: $black;
+        transform: translateY(70px) scale(1.1);
     }
 }

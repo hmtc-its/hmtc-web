@@ -77,7 +77,10 @@
   p {
     @media #{$small} {  
       line-height: 1em;
-      //color: 
     }
   }
+}
+
+.media-grid-title--small {
+  font-size: $base-font-size;
 }

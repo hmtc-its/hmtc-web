@@ -18,6 +18,14 @@
 	}
 }
 
+.section-title--white {
+	color: $white;
+
+	&:after {
+		background: $white;
+	}
+}
+
 .section-featured {
 	min-height: 0;
 }

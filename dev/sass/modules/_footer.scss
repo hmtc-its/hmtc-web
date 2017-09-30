@@ -1,8 +1,10 @@
 .footer {
+	position: relative;
 	padding: $space 0;
 	background: $black;
 	color: $black50;
 	margin-top: $space * 4;
+	z-index: 5;
 }
 
 .footer-title {
